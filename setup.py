@@ -9,7 +9,7 @@ _MINOR_VERSION         = 5
 _MICRO_VERSION         = None
 _PRE_RELEASE_TYPE      = 'a'   # a | b | rc
 _PRE_RELEASE_VERSION   = 4
-_DEV_RELEASE_VERSION   = 3
+_DEV_RELEASE_VERSION   = 4
 
 version = '{}.{}'.format(_MAJOR_VERSION, _MINOR_VERSION)
 revision = None
@@ -23,10 +23,10 @@ if _PRE_RELEASE_TYPE is not None and _PRE_RELEASE_VERSION is not None:
 if _DEV_RELEASE_VERSION is not None:
     version += '.dev{}'.format(_DEV_RELEASE_VERSION)
     revision = 'master'
-    download_url = 'https://github.com/datamachine/twx/archive/{}.tar.gz'.format(revision)
 else:
     revision = version
-    download_url = 'https://github.com/datamachine/twx/archive/twx-{}.tar.gz'.format(revision)
+    
+download_url = 'https://github.com/datamachine/twx/archive/{}.tar.gz'.format(revision)
 
 print(version)
 print(download_url)
