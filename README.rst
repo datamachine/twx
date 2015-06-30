@@ -1,6 +1,6 @@
-#######################################
-TWX: Unofficial Telegram Bot API Client
-#######################################
+########################################################################
+TWX: Abstraction Layer Over Telegram's Bot API and MTProto Chat Potocols
+########################################################################
 
 :contributions: Please join https://github.com/datamachine/twx
 :issues: Please use https://github.com/datamachine/twx/issues
