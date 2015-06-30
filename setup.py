@@ -1,5 +1,4 @@
 from setuptools import setup
-from subprocess import Popen, PIPE
 import sys
 
 revision = None
@@ -10,7 +9,7 @@ _MINOR_VERSION         = 5
 _MICRO_VERSION         = None
 _PRE_RELEASE_TYPE      = 'a'   # a | b | rc
 _PRE_RELEASE_VERSION   = 4
-_DEV_RELEASE_VERSION   = None
+_DEV_RELEASE_VERSION   = 3
 
 version = '{}.{}'.format(_MAJOR_VERSION, _MINOR_VERSION)
 revision = None
@@ -34,16 +33,16 @@ print(download_url)
 
 setup(
     name = 'twx',
-    packages = ['twx', 'twx.botapi'],
+    packages = ['twx'],
     version = version,
-    description = 'Telegram Bot API and MTProto Client and Abstraction Layer',
+    description = "Abstraction Layer Over Telegram's Bot API and MTProto Chat Potocols",
     long_description = open("README.rst").read(),
     author = 'Vince Castellano, Phillip Lopo',
     author_email = 'surye80@gmail.com, philliplopo@gmail.com',
     keywords = ['datamachine', 'telex', 'telegram', 'bot', 'api', 'rpc'],
     url = 'https://github.com/datamachine/twx', 
     download_url = download_url, 
-    install_requires=['requests'],
+    install_requires=['requests', 'twx.botapi'],
     platforms = ['Linux', 'Unix', 'MacOsX', 'Windows'],
     classifiers = [
       'Development Status :: 4 - Beta',
