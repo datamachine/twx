@@ -729,7 +729,7 @@ class TWXBotApi(TWX):
         # :param user: User to get profile photos.
         # :param on_success: Callback with the requested photos
         # :param offset: Sequential number of the first photo to be returned. By default, all photos are returned.
-        # :param limit: Limits the number of photos to be retrieved. Values between 1—100 are accepted. Defaults to 100.
+        # :param limit: Limits the number of photos to be retrieved. Values between 1Â—100 are accepted. Defaults to 100.
         # """
 
         botapi.get_user_profile_photos(user_id=user.id, on_success=on_success, offset=offset, limit=limit,
@@ -798,7 +798,7 @@ class TWXBotApi(TWX):
                           '@{}'.format(self._bot_user.username.lower()) in msg.text.lower()
         twx_msg.out = False  # BotApi will never include it's own messages.
         twx_msg.unread = False  # BotApi has no read/unread
-        twx_msg.service = any([msg.new_chat_participant, msg.left_chat_participant, msg.new_chat_title,
+        twx_msg.service = any([msg.new_chat_member, msg.left_chat_member, msg.new_chat_title,
                                msg.new_chat_photo, msg.delete_chat_photo, msg.group_chat_created])
         twx_msg.sender = self._to_twx_peer(msg.sender)
         twx_msg.receiver = self._to_twx_peer(msg.chat)
