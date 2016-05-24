@@ -554,8 +554,9 @@ class TWXBotApi(TWX):
             import sys
             print(update.__str__().encode().decode(sys.stdout.encoding))
         msg = update.message
-        if any([msg.text, msg.audio, msg.document, msg.photo, msg.video, msg.sticker, msg.location, msg.contact]):
-            self._on_msg_receive(msg=self._to_twx_msg(msg))
+        if msg:
+            if any([msg.text, msg.audio, msg.document, msg.photo, msg.video, msg.sticker, msg.location, msg.contact]):
+                self._on_msg_receive(msg=self._to_twx_msg(msg))
 
     @property
     def bot_id(self):
